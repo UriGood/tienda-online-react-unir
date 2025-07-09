@@ -1,0 +1,105 @@
+body {
+  padding: 0px;
+  margin: 0px;
+  font-size: 1.4rem;
+}
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+:root{
+  --primary-color: rgb(0, 29, 110);
+}
+a {
+  padding: 5px 15px;
+}
+
+header {
+  background-color: var(--primary-color);
+  /* width: 100%; */
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+header a {
+  color: white;
+  text-decoration: none;
+  font-size: 22px;
+  /* font-weight: 600; */
+}
+
+
+footer {
+  /* position: absolute; */
+  width: 100%;
+  background-color: var(--primary-color);
+  color: white;
+  padding: 20px;
+  /* bottom: 0px; */
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+}
+
+.productItem{
+  max-width: 100%; /* No exceder su columna */
+  overflow: hidden; /* Evita desbordes si el contenido se pasa */
+  box-sizing: border-box; /* Para que padding y border no sumen ancho extra */
+  padding: 40px 10px;
+}
+.productItem .img-container{
+  max-width: 100%;
+  display: flex;
+  justify-content: center;
+  border: 1px solid rgb(212, 212, 212);
+  border-radius: 8px;
+  padding: 15px;
+  overflow: hidden;
+  max-height: 220px;
+  cursor: pointer;
+}
+.productItem img{
+  /* padding: 0px 25%; */
+  height: 180px;
+  /* padding: 5px; */
+  transition: transform 0.2s ease-in-out;
+}
+.productItem .img-container:hover img{
+  transform: scale(1.4);
+  /* overflow: hidden; */
+}
+.productItem #price{
+  color: green;
+  font-weight: bolder;
+  font-size: 22px;
+}
+
+.productItem .btn-add{
+  background-color: var(--primary-color);
+  padding: 8px 13px;
+  border-radius: 5px;
+  border-width: 0px;
+  cursor: pointer;
+  font-size: 17px;
+  color: white;
+}
+
+.productItem #count{
+  color: rgb(161, 0, 0);
+  font-weight: bold;
+  font-size: 20px;
+}
+.productItem p{
+  margin-bottom: 6px;
+  margin-top: 6px;
+}
+
+.productList{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 columnas del mismo tamaño */
+  /* gap: 1rem; espacio entre elementos (opcional) */
+  max-width: 80%;
+  margin: auto;
+}
