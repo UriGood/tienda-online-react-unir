@@ -1,0 +1,14 @@
+.searchProducts{
+    width: 1250px;
+    margin: auto;
+    background-color: white;
+    box-sizing: border-box;
+    padding: 30px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    min-height: 600px;
+}
+
+.searchProducts__card{
+    border: 1px solid;
+}
