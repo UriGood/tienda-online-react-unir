@@ -1,6 +1,6 @@
  import { useEffect, useState } from 'react'
 
-export function useProducts(apiUrl = 'https://fakestoreapi.com/products') {
+export function useProducts(apiUrl = 'https://dummyjson.com/products') {
   const [products, setProducts] = useState([])
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(null)
@@ -12,7 +12,7 @@ export function useProducts(apiUrl = 'https://fakestoreapi.com/products') {
         const response = await fetch(apiUrl)
         if (!response.ok) throw new Error('Error al cargar productos')
         const data = await response.json()
-        setProducts(data)
+        setProducts(data.products)
       } catch (err) {
         setError(err.message || 'Error desconocido')
       } finally {

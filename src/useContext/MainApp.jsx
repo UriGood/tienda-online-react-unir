@@ -8,8 +8,7 @@ export const MainApp = () => {
   return (
     <>
         <Header/>
-        <h1>Main APP</h1>
-        <hr />
+        
         <Routes>
           <Route path="/" element={<HomePage/>}/>
           <Route path="cart" element={<CartPage/>}/>
