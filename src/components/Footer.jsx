@@ -1,6 +1,8 @@
-
+import "../styles/components/Footer.css";
 export default function Footer() {
   return (
-    <footer>Desarrollado por Uriel Martínez Flores</footer>
-  )
+    <footer>
+      <h3>Desarrollado por Uriel Martínez Flores</h3>
+    </footer>
+  );
 }
