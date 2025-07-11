@@ -114,10 +114,10 @@ nav a {
 
 .productItem .btn-add{
   background-color: var(--primary-color);
-  padding: 8px 13px;
+  padding: 8px 8px;
   border-radius: 5px;
   cursor: pointer;
-  font-size: 17px;
+  font-size: 14px;
   color: white;
   border: 1px solid var(--primary-color);
   transition: all 0.3s ease-in-out;

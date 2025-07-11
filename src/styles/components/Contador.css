@@ -5,6 +5,7 @@
     text-align: center;
     display: flex;
     justify-content: space-around;
+    background-color: white;
 }
 .contador__input{
     width: 30px !important;
@@ -17,13 +18,14 @@
 .contador__less, .contador__more{
     padding: 0px !important;
     width: 25px !important;
-    background-color: unset !important;
+    background-color: white !important;
     color: black !important;
     border-color: unset!important;
     outline: none !important;
     border: none;
     font-size: 30px !important;
     font-weight: 100 !important;
+    cursor: pointer;
 }
 
 .col-button{
