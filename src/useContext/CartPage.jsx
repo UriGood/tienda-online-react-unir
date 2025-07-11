@@ -1,3 +1,4 @@
+import { Contador } from "../components/Contador"
 
 export const CartPage = () => {
   return (
@@ -17,8 +18,8 @@ export const CartPage = () => {
                 <div className="col">
                   title
                 </div>
-                <div className="col">
-                  contador
+                <div className="col col-button">
+                  <Contador/>
                 </div>
                 <div className="col">
                   total
