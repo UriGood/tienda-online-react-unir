@@ -5,9 +5,10 @@ import { CartPage }  from "./CartPage"
 import { Header } from "../components/Header"
 import Footer from "../components/Footer"
 import SearchProducts from "./SearchProducts"
+import { CartProvider } from "./context/CartProvider"
 export const MainApp = () => {
   return (
-    <div className="app">
+    <CartProvider className="app">
       <Header/>
       <main className="main-content">
         <Routes>
@@ -18,6 +19,6 @@ export const MainApp = () => {
         </Routes>
       </main>
       <Footer/>
-    </div>
+    </CartProvider>
   )
 }
