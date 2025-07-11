@@ -1,15 +1,15 @@
-import { useState } from "react";
+// import { useState } from "react";
 import "../styles/components/Contador.css";
 import PropTypes from "prop-types";
-export const Contador = ({ onChange }) => {
-  const [contadorValue, setContadorValue] = useState(1);
+export const Contador = ({value, onChange  }) => {
+  // const [contadorValue, setContadorValue] = useState(1);
 
-  const updatecontador = (value) => {
-    if (value < 1 && contadorValue == 1) return;
-    const newValue = contadorValue + value;
+  const updatecontador = (amount) => {
+    if (amount < 1 && value == 1) return;
+    const newValue = value + amount;
     // console.log(newValue);
     
-    setContadorValue(newValue);
+    // setContadorValue(newValue);
     if (onChange) {
       onChange(newValue);
     }
@@ -24,7 +24,7 @@ export const Contador = ({ onChange }) => {
         type="text"
         disabled
         className="contador__input"
-        value={contadorValue}
+        value={value}
       />
       <button className="contador__more" onClick={() => updatecontador(+1)}>
         +
@@ -35,5 +35,6 @@ export const Contador = ({ onChange }) => {
 
 
 Contador.propTypes = {
-  onChange: PropTypes.func.isRequired
+  onChange: PropTypes.func.isRequired, 
+  value: PropTypes.number.isRequired
 }

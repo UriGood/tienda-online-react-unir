@@ -19,7 +19,7 @@ export const CartPage = () => {
                   title
                 </div>
                 <div className="col col-button">
-                  <Contador/>
+                  <Contador value={1}/>
                 </div>
                 <div className="col">
                   total

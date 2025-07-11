@@ -5,20 +5,25 @@ import { useContext, useState } from "react";
 import { CartContext } from "../useContext/context/CartContext";
 export function ProductItem({ product }) {
   const { cart ,setCart } = useContext(CartContext);
-  const [productLocal, setProductLocal] = useState({ id: product.id, count: 1 });
+  const [contadorValue, setContadorValue] = useState(1);
+  // const [productLocal, setProductLocal] = useState({ id: product.id, count: 1 });
   const assembleObject = (value) =>{
     // console.log("assembleObject ", value);
-    
-    setProductLocal({
-      id: product.id,
-      count: value,
-    })
+    setContadorValue(value);
+    // setProductLocal({
+    //   id: product.id,
+    //   count: value,
+    // })
 
-    console.log("productLocal", productLocal);
+    // console.log("productLocal", productLocal);
     
   }
 
   const saveProduct = () =>{
+    const productLocal = {
+      id: product.id,
+      count: contadorValue,
+    };
     const existingProduct = cart.find((item) => item.id === productLocal.id);
     if (existingProduct) {
       const updatedCart = cart.map((item) =>
@@ -30,6 +35,9 @@ export function ProductItem({ product }) {
     } else{
           setCart([...cart, productLocal]);
     }
+
+    setContadorValue(1)
+    alert("Producto agregado correctamente")
   }
 
   return (
@@ -43,7 +51,7 @@ export function ProductItem({ product }) {
           <p id="price">${product.price}</p>
           <p>Disponibles: <span id="count">{ product.rating }</span> </p>
           <div className="contador_container">
-            <Contador onChange={assembleObject}/>
+            <Contador value={contadorValue} onChange={assembleObject}/>
             <button className="btn-add" href="" onClick={saveProduct}>Agregar al carrito</button>
           </div>
         </div>
