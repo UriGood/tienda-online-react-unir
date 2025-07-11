@@ -13,8 +13,8 @@ export default function SearchProducts() {
     <>
       <SearchBar onSearch={setQuery} />
       <div className="searchProducts">
-        {loading && <p>Buscando los productos</p>}
-
+        {loading && <div> Buscando los productos </div>}
+        { (!results.length && !loading) && <div> No hay productos de esta busqueda </div> }
         {results.map((prod) => {
           return <SearchProductItem key={prod.id} product={prod}/>;
         })}
