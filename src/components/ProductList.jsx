@@ -1,6 +1,6 @@
 import { useProducts } from "../customHooks/useProducts";
 import { ProductItem } from "./ProductItem";
-
+import '../styles/components/ProductList.css'
 export default function ProductList() {
 
   const { products, loading, error } = useProducts();

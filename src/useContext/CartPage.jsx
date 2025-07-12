@@ -71,18 +71,18 @@ export const CartPage = () => {
   return (
     <>
       <div className="cart-container">
-        <div className="section">
+        <div className="cart-container__section">
           <div>
             Productos
             <hr />
           </div>
           <div className="details-of-the-products">
             {dataCart.map((product) => (
-              <div className="row" key={product.id}>
-                <div className="col">
+              <div className="cart-container__details-of-the-products--row" key={product.id}>
+                <div className="cart-container__details-of-the-products--col">
                   <img src={product.thumbnail} alt={product.title} />
                 </div>
-                <div className="col">
+                <div className="cart-container__details-of-the-products--col">
                   <h4>{product.title}</h4>
                   <small>{product.description}</small>
                   <br />
@@ -93,23 +93,23 @@ export const CartPage = () => {
                     Borrar producto
                   </p>
                 </div>
-                <div className="col col-button">
+                <div className="cart-container__details-of-the-products--col cart-container__col-button">
                   <Contador
                     value={product.cantidad}
                     onChange={(value) => updateCart(product.id, value)}
                   />
                 </div>
-                <div className="col cart-container__price">
-                  <small className="cart-container___small">
+                <div className="cart-container__details-of-the-products--col cart-container__price">
+                  <small className="cart-container__small">
                     Precio Unitario: <br />
-                    <span className="cart-container___small--precio-unitario">
+                    <span className="cart-container__small--precio-unitario">
                       ${product.price}
                     </span>
                   </small>
                   <br />
-                  <small className="cart-container___small">
+                  <small className="cart-container__small">
                     Subtotal: <br />
-                    <span className="cart-container___small--subtotal">
+                    <span className="cart-container__small--subtotal">
                       ${(product.price * product.cantidad).toFixed(2)}
                     </span>
                   </small>
@@ -119,25 +119,25 @@ export const CartPage = () => {
           </div>
         </div>
 
-        <div className="section">
+        <div className="cart-container__section">
           <div>
             Resumen de la compra
             <hr />
           </div>
-          <div className="details-of-the-total">
-            <div className="row">
+          <div className="cart-container__details-of-the-total">
+            <div className="cart-container__details-of-the-total--row">
               <p>Producto</p>
               <p>$ {total}</p>
             </div>
 
-            <div className="row">
+            <div className="cart-container__details-of-the-total--row">
               <p>Envío</p>
               <p>Gratis</p>
             </div>
 
             <p className="cart-container__a"> Ingresar código de cupón </p>
 
-            <div className="row">
+            <div className="cart-container__details-of-the-total--row">
               <p>Total</p>
               <p>$ {total}</p>
             </div>
