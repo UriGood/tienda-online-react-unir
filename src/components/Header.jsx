@@ -3,7 +3,7 @@ import '../styles/components/Header.css'
 export function Header() {
   return (
     <header>
-    <h2>Uriel Martinez - Tienda Online</h2>
+    <h2>Uriel Martínez - Tienda Online</h2>
       <nav>
         <Link to="/">Home</Link> | 
         <Link to="cart">Carrito</Link> |

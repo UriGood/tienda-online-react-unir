@@ -9,6 +9,10 @@ import { CartProvider } from "./context/CartProvider";
 import { Orders } from "./Orders";
 import { OrdersProvider } from "./context/OrdersProvider";
 import { Returns } from "./Returns";
+import "@fontsource/nunito";
+import "@fontsource/nunito/400.css";
+import "@fontsource/nunito/700.css";
+import "@fontsource/nunito/800.css";
 export const MainApp = () => {
   return (
     <CartProvider>

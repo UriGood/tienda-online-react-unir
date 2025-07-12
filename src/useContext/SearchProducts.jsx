@@ -6,7 +6,7 @@ import { SearchProductItem } from "../components/SearchProductItem";
 export default function SearchProducts() {
   const [query, setQuery] = useState("");
   const { results, loading } = useProductSearch(query);
-  const [ mensaje, setMensaje ] = useState("Busquedas sugeridas: watch | smart | iphone | shoes |  ");
+  const [ mensaje, setMensaje ] = useState("Búsquedas sugeridas: watch | smart | iphone | shoes |  ");
  
   useEffect(() => {
     if (query !== "" && !results.length && !loading) {

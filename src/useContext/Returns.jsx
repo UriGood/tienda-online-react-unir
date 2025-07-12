@@ -49,7 +49,7 @@ export const Returns = () => {
                 <img src={product.thumbnail} alt={product.title} />
               </div>
               <div className="returnsContainer__col">
-                <small>En proceso de devolucion</small>
+                <small>En proceso de devolución</small>
                 <b>{product.title}</b>
                 <p>{product.description}</p>
               </div>

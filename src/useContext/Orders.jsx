@@ -60,7 +60,7 @@ export const Orders = () => {
             <div className="ordersContainer__col ordersContainer__col--dev">
               <button>Volver a comprar</button>
               <button onClick={() => requestReturn(product.id)}>
-                Solicitar devolucion
+                Solicitar devolución
               </button>
             </div>
           </div>

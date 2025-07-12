@@ -18,7 +18,7 @@ export function SearchBar({ onSearch }) {
     <form className="searchbar" onSubmit={handleSubmit}>
       <input
         className="searchbar__input"
-        placeholder="Busquedas sugeridas: watch | smart | iphone | shoes | food | Apple "
+        placeholder="Búsquedas sugeridas: watch | smart | iphone | shoes | food | Apple "
         type="text"
         value={input}
         onChange={handleChange}

@@ -5,6 +5,8 @@ body {
   padding: 0px;
   margin: 0px;
   font-size: 1.4rem;
+  font-family: 'Nunito', sans-serif;
+
 }
 *, *::before, *::after {
   box-sizing: border-box;
