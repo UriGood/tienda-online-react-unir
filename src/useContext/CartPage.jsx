@@ -1,13 +1,12 @@
 import { Contador } from "../components/Contador";
 import { useContext, useEffect, useState } from "react";
 import { CartContext } from "../useContext/context/CartContext";
-import '../styles/pages/CartPage.css'
+import "../styles/pages/CartPage.css";
 
 export const CartPage = () => {
-
   const { cart, setCart } = useContext(CartContext);
   const [dataCart, setDataCart] = useState([]);
-  const [total, setTotal] = useState(0)
+  const [total, setTotal] = useState(0);
 
   useEffect(() => {
     const fetchCartData = async () => {
@@ -32,12 +31,10 @@ export const CartPage = () => {
 
     if (cart.length > 0) {
       fetchCartData();
-      
     } else {
-      setDataCart([]); 
+      setDataCart([]);
     }
-    
-  }, [cart ]);
+  }, [cart]);
 
   const updateCart = (id, value) => {
     console.log("id", id);
@@ -54,26 +51,24 @@ export const CartPage = () => {
   };
 
   const deleteProduct = (id) => {
+    if (confirm("¿Estás seguro de borrar el producto?")) {
       setCart((prevDataCart) =>
         prevDataCart.filter((p) => {
           if (p.id !== id) {
-            return p
+            return p;
           }
         })
       );
-  }
+    }
+  };
 
-  useEffect(() =>{
+  useEffect(() => {
     let saveTotals = 0;
     dataCart.map((product) => {
-      return saveTotals +=  product.cantidad * product.price;
-    })
+      return (saveTotals += product.cantidad * product.price);
+    });
     setTotal(saveTotals.toFixed(2));
-  },[dataCart])
-
-  const consultarCartGlobal = () => {
-    console.log(cart);
-  };
+  }, [dataCart]);
 
   return (
     <>
@@ -91,8 +86,14 @@ export const CartPage = () => {
                 </div>
                 <div className="col">
                   <h4>{product.title}</h4>
-                  <small>{product.description}</small><br/>
-                  <p className="cart-container__deleteProduct" onClick={()=>deleteProduct(product.id)}>Borrar producto</p>
+                  <small>{product.description}</small>
+                  <br />
+                  <p
+                    className="cart-container__deleteProduct"
+                    onClick={() => deleteProduct(product.id)}
+                  >
+                    Borrar producto
+                  </p>
                 </div>
                 <div className="col col-button">
                   <Contador
@@ -101,12 +102,18 @@ export const CartPage = () => {
                   />
                 </div>
                 <div className="col cart-container__price">
-                  <small className="cart-container___small">Precio Unitario: <br/>
-                    <span className="cart-container___small--precio-unitario">${ product.price }</span>
+                  <small className="cart-container___small">
+                    Precio Unitario: <br />
+                    <span className="cart-container___small--precio-unitario">
+                      ${product.price}
+                    </span>
                   </small>
-                    <br/>
-                  <small className="cart-container___small">Subtotal: <br/> 
-                    <span className="cart-container___small--subtotal">${ (product.price * product.cantidad).toFixed(2) }</span>
+                  <br />
+                  <small className="cart-container___small">
+                    Subtotal: <br />
+                    <span className="cart-container___small--subtotal">
+                      ${(product.price * product.cantidad).toFixed(2)}
+                    </span>
                   </small>
                 </div>
               </div>
@@ -138,8 +145,6 @@ export const CartPage = () => {
             </div>
           </div>
           <button>Continuar con la compra</button>
-          <button onClick={consultarCartGlobal}>cart global</button>
-
         </div>
       </div>
     </>
