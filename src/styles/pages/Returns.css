@@ -1,4 +1,4 @@
-.ordersContainer {
+.returnsContainer {
     max-width: 1200px;
     margin: auto;
     margin-top: 5px;
@@ -8,42 +8,43 @@
     font-size: 18px;
 }
 
-.ordersContainer__card {
+.returnsContainer__card {
     background-color: white;
     border-radius: 10px;
     padding: 20px;
     margin-top: 25px;
     margin-bottom: 25px;
     max-height: 250px;
+    min-height: 250px;
 }
 
-.ordersContainer__row {
+.returnsContainer__row {
     display: grid;
     grid-template-columns: 20% 40% 20% 20%;
     /* gap: 10px; */
 }
 
-.ordersContainer__row--date {
+.returnsContainer__row--date {
     padding-bottom: 20px;
 }
 
-.ordersContainer__image img {
+.returnsContainer__image img {
     width: 120px;
     height: auto;
     display: block;
 }
 
-.ordersContainer__col {
+.returnsContainer__col {
     display: flex;
     flex-direction: column;
     justify-content: center;
     /* align-items: self-start; */
 }
-.ordersContainer__col small{
-    color: green;
+.returnsContainer__col small{
+    color: red;
     font-weight: bolder;
 }
-.ordersContainer__col--message {
+.returnsContainer__col--message {
     align-items: center;
     display: flex;
     flex-direction: column;
@@ -54,10 +55,10 @@
     font-weight: bolder;
 }
 
-.ordersContainer__col--dev {
+.returnsContainer__col--dev {
   max-width: 100%;
 }
-.ordersContainer__col--dev button {
+.returnsContainer__col--dev button {
     width: 100%;
     padding: 10px;
     font-weight: bold;
@@ -70,13 +71,14 @@
     font-size: 17px;
     transition: all 0.3s ease-in-out;
 }
-.ordersContainer__col--dev button:nth-child(2):hover{
+.returnsContainer__col--dev button:nth-child(2):hover{
     background-color: white;
     color: var(--primary-color);
 }
-.ordersContainer__col--dev button:nth-child(1) {
+.returnsContainer__col--dev button:nth-child(1) {
     background-color: white;
     color: var(--primary-color);    
     font-size: 14px;
 }
 
+ 

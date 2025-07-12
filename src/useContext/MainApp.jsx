@@ -8,6 +8,7 @@ import SearchProducts from "./SearchProducts";
 import { CartProvider } from "./context/CartProvider";
 import { Orders } from "./Orders";
 import { OrdersProvider } from "./context/OrdersProvider";
+import { Returns } from "./Returns";
 export const MainApp = () => {
   return (
     <CartProvider>
@@ -20,7 +21,7 @@ export const MainApp = () => {
             <Route path="cart" element={<CartPage />} />
             <Route path="search-products" element={<SearchProducts />} />
             <Route path="pucharses" element={<Orders />} />
-            <Route path="returns" element={<SearchProducts />} />
+            <Route path="returns" element={<Returns />} />
             <Route path="/*" element={<Navigate to="/" />} />
           </Routes>
         </main>

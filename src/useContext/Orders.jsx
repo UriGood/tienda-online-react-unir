@@ -4,7 +4,7 @@ import { OrdersContext } from "./context/OrdersContext";
 export const Orders = () => {
   const [purchases, setPurchases] = useState([]);
   const { orders, setOrders } = useContext(OrdersContext);
-
+  const [day] = useState(['10-07-2025','9-07-2025','05-07-2025','28-06-2025','25-06-2025']);
   useEffect(() => {
     const fetchPurchases = async () => {
       try {
@@ -36,18 +36,12 @@ export const Orders = () => {
     }
   };
   
-  const getOrders = () => {
-    console.log(orders);
-  };
-
-  useEffect(() => {}, [purchases]);
-
   return (
     <div className="ordersContainer">
-      {purchases.map((product) => (
+      {purchases.map((product, index) => (
         <div className="ordersContainer__card" key={product.id}>
           <div className="ordersContainer__row--date">
-            <div className="ordersContainer__col--date">23 de junio 2025</div>
+            <div className="ordersContainer__col--date">{day[index]}</div>
             <hr />
           </div>
           <div className="ordersContainer__row">
@@ -64,7 +58,7 @@ export const Orders = () => {
               al vendedor
             </div>
             <div className="ordersContainer__col ordersContainer__col--dev">
-              <button onClick={getOrders}>Volver a comprar</button>
+              <button>Volver a comprar</button>
               <button onClick={() => requestReturn(product.id)}>
                 Solicitar devolucion
               </button>
