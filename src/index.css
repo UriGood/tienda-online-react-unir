@@ -212,9 +212,10 @@ nav a {
 
 
 .cart-container .section .details-of-the-products .row{
-  grid-template-columns: 20% 40% 20% 20%; 
+  grid-template-columns: 22% 40% 20% 18%; 
   display: grid;
   border-bottom: 1px solid #989898;
+  align-items: center;
 }
 .cart-container .section .details-of-the-products .row .col{
   width: 100%;
@@ -223,5 +224,5 @@ nav a {
 }
 .cart-container .section .details-of-the-products .row .col img{
   width: 100%;
-  padding: 10px;
+  /* padding: 10px; */
 }

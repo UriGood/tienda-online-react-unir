@@ -4,11 +4,11 @@ import { CartContext } from "../useContext/context/CartContext";
 import '../styles/pages/CartPage.css'
 
 export const CartPage = () => {
+
   const { cart, setCart } = useContext(CartContext);
   const [dataCart, setDataCart] = useState([]);
   const [total, setTotal] = useState(0)
-  // const [contadorValue, setContadorValue] = useState(1);
-  console.log(dataCart);
+
   useEffect(() => {
     const fetchCartData = async () => {
       try {
@@ -34,10 +34,9 @@ export const CartPage = () => {
       fetchCartData();
       
     } else {
-      setDataCart([]); // limpiar si el carrito está vacío
+      setDataCart([]); 
     }
-
-
+    
   }, [cart ]);
 
   const updateCart = (id, value) => {
@@ -123,7 +122,7 @@ export const CartPage = () => {
           <div className="details-of-the-total">
             <div className="row">
               <p>Producto</p>
-              <p>$10.00</p>
+              <p>$ {total}</p>
             </div>
 
             <div className="row">
@@ -131,7 +130,7 @@ export const CartPage = () => {
               <p>Gratis</p>
             </div>
 
-            <p>ingresar código de cupón</p>
+            <p className="cart-container__a"> Ingresar código de cupón </p>
 
             <div className="row">
               <p>Total</p>

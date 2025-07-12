@@ -4,19 +4,12 @@ import '../styles/components/ProductItem.css'
 import { useContext, useState } from "react";
 import { CartContext } from "../useContext/context/CartContext";
 export function ProductItem({ product }) {
+
   const { cart ,setCart } = useContext(CartContext);
   const [contadorValue, setContadorValue] = useState(1);
-  // const [productLocal, setProductLocal] = useState({ id: product.id, count: 1 });
-  const assembleObject = (value) =>{
-    // console.log("assembleObject ", value);
-    setContadorValue(value);
-    // setProductLocal({
-    //   id: product.id,
-    //   count: value,
-    // })
 
-    // console.log("productLocal", productLocal);
-    
+  const assembleObject = (value) =>{
+    setContadorValue(value);
   }
 
   const saveProduct = () =>{

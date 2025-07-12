@@ -42,3 +42,7 @@
 .cart-container__deleteProduct:hover::after {
   width: 100%;
 }
+
+.cart-container__a{
+    color: rgb(0, 0, 237);
+}

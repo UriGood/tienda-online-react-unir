@@ -7,9 +7,7 @@ export const Contador = ({value, onChange  }) => {
   const updatecontador = (amount) => {
     if (amount < 1 && value == 1) return;
     const newValue = value + amount;
-    // console.log(newValue);
-    
-    // setContadorValue(newValue);
+
     if (onChange) {
       onChange(newValue);
     }
