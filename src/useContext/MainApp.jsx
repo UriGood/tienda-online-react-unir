@@ -16,6 +16,7 @@ export const MainApp = () => {
             <Route path="/" element={<HomePage />} />
             <Route path="cart" element={<CartPage />} />
             <Route path="search-products" element={<SearchProducts />} />
+            <Route path="returns" element={<SearchProducts />} />
             <Route path="/*" element={<Navigate to="/" />} />
           </Routes>
         </main>

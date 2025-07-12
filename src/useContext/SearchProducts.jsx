@@ -7,8 +7,7 @@ export default function SearchProducts() {
   const [query, setQuery] = useState("");
   const { results, loading } = useProductSearch(query);
   const [ mensaje, setMensaje ] = useState("Busquedas sugeridas: watch | smart | iphone | shoes |  ");
-  console.log("obteniedo el resultado en el padre", query);
-  console.log("este es el result ", results);
+ 
   useEffect(() => {
     if (query !== "" && !results.length && !loading) {
       setMensaje("No se encontraron resultados de este producto");

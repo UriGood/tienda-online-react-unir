@@ -44,7 +44,7 @@ export function ProductItem({ product }) {
           <p id="price">${product.price}</p>
           <p>Disponibles: <span id="count">{ product.rating }</span> </p>
           <div className="contador_container">
-            <Contador value={contadorValue} onChange={assembleObject}/>
+            <Contador value={contadorValue} onChange={assembleObject}/> &nbsp;
             <button className="btn-add" href="" onClick={saveProduct}>Agregar al carrito</button>
           </div>
         </div>

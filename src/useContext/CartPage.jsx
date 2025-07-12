@@ -37,8 +37,6 @@ export const CartPage = () => {
   }, [cart]);
 
   const updateCart = (id, value) => {
-    console.log("id", id);
-    console.log("valueid", value);
     setCart((prevDataCart) =>
       prevDataCart.map((p) => {
         if (p.id == id) {
