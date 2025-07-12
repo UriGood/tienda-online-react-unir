@@ -54,6 +54,16 @@ export const CartPage = () => {
     );
   };
 
+  const deleteProduct = (id) => {
+      setCart((prevDataCart) =>
+        prevDataCart.filter((p) => {
+          if (p.id !== id) {
+            return p
+          }
+        })
+      );
+  }
+
   useEffect(() =>{
     let saveTotals = 0;
     dataCart.map((product) => {
@@ -82,7 +92,8 @@ export const CartPage = () => {
                 </div>
                 <div className="col">
                   <h4>{product.title}</h4>
-                  <small>{product.description}</small>
+                  <small>{product.description}</small><br/>
+                  <p className="cart-container__deleteProduct" onClick={()=>deleteProduct(product.id)}>Borrar producto</p>
                 </div>
                 <div className="col col-button">
                   <Contador

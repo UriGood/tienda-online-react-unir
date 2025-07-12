@@ -19,3 +19,26 @@
     color: green;
 
 }
+
+.cart-container__deleteProduct{
+    color: rgb(158, 0, 0);
+    font-size: 18px;
+    cursor: pointer;
+    position: relative;
+    display: inline-block;
+}
+
+.cart-container__deleteProduct::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0%;
+    height: 2px;
+    background-color: rgb(158, 0, 0);
+    transition: width 0.3s ease;
+}
+
+.cart-container__deleteProduct:hover::after {
+  width: 100%;
+}
