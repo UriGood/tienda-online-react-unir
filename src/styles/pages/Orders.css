@@ -1,0 +1,85 @@
+.ordersContainer {
+    max-width: 1200px;
+    margin: auto;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    padding: 25px;
+    box-sizing: border-box;
+    font-size: 18px;
+}
+
+.ordersContainer__card {
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    max-height: 250px;
+}
+
+.ordersContainer__row {
+    display: grid;
+    grid-template-columns: 20% 40% 20% 20%;
+    /* gap: 10px; */
+}
+
+.ordersContainer__row--date {
+    padding-bottom: 20px;
+}
+
+.ordersContainer__image img {
+    width: 120px;
+    height: auto;
+    display: block;
+}
+
+.ordersContainer__col {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* align-items: self-start; */
+}
+.ordersContainer__col small{
+    color: green;
+    font-weight: bolder;
+}
+.ordersContainer__col--message {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    cursor: pointer;
+    color: var(--primary-color);
+    font-weight: bolder;
+}
+
+.ordersContainer__col--dev {
+  max-width: 100%;
+}
+.ordersContainer__col--dev button {
+    width: 100%;
+    padding: 10px;
+    font-weight: bold;
+    background-color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+    border-radius: 5px;
+    cursor: pointer;
+    color: white;
+    margin-bottom: 10px;
+    font-size: 17px;
+    transition: all 0.3s ease-in-out;
+}
+.ordersContainer__col--dev button:nth-child(2):hover{
+    background-color: white;
+    color: var(--primary-color);
+}
+.ordersContainer__col--dev button:nth-child(1) {
+    background-color: white;
+    color: var(--primary-color);    
+    font-size: 14px;
+}
+
+/* .ordersContainer__row:nth-child(1){
+    background-color: red;
+} */

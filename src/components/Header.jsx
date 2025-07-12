@@ -8,6 +8,7 @@ export function Header() {
         <Link to="/">Home</Link> | 
         <Link to="cart">Carrito</Link> |
         <Link to="search-products">Buscar Productos</Link>  | 
+        <Link to="pucharses">Compras</Link>  | 
         <Link to="returns">Devoluciones</Link>
       </nav>
     </header>
