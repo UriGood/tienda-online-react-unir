@@ -1,0 +1,21 @@
+.cart-container___small{
+    font-size: 16px;
+}
+
+.cart-container__price{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.cart-container___small--precio-unitario{
+    font-weight: 600;
+    font-size: 19px;
+}
+
+.cart-container___small--subtotal{
+    font-weight: 600;
+    font-size: 22px;
+    color: green;
+
+}

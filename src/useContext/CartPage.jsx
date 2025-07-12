@@ -1,9 +1,12 @@
 import { Contador } from "../components/Contador";
 import { useContext, useEffect, useState } from "react";
 import { CartContext } from "../useContext/context/CartContext";
+import '../styles/pages/CartPage.css'
+
 export const CartPage = () => {
   const { cart, setCart } = useContext(CartContext);
   const [dataCart, setDataCart] = useState([]);
+  const [total, setTotal] = useState(0)
   // const [contadorValue, setContadorValue] = useState(1);
   console.log(dataCart);
   useEffect(() => {
@@ -29,10 +32,13 @@ export const CartPage = () => {
 
     if (cart.length > 0) {
       fetchCartData();
+      
     } else {
       setDataCart([]); // limpiar si el carrito está vacío
     }
-  }, [cart]);
+
+
+  }, [cart ]);
 
   const updateCart = (id, value) => {
     console.log("id", id);
@@ -47,6 +53,14 @@ export const CartPage = () => {
       })
     );
   };
+
+  useEffect(() =>{
+    let saveTotals = 0;
+    dataCart.map((product) => {
+      return saveTotals +=  product.cantidad * product.price;
+    })
+    setTotal(saveTotals.toFixed(2));
+  },[dataCart])
 
   const consultarCartGlobal = () => {
     console.log(cart);
@@ -76,8 +90,14 @@ export const CartPage = () => {
                     onChange={(value) => updateCart(product.id, value)}
                   />
                 </div>
-                <div className="col">
-                  <button onClick={consultarCartGlobal}>cart global</button>
+                <div className="col cart-container__price">
+                  <small className="cart-container___small">Precio Unitario: <br/>
+                    <span className="cart-container___small--precio-unitario">${ product.price }</span>
+                  </small>
+                    <br/>
+                  <small className="cart-container___small">Subtotal: <br/> 
+                    <span className="cart-container___small--subtotal">${ (product.price * product.cantidad).toFixed(2) }</span>
+                  </small>
                 </div>
               </div>
             ))}
@@ -104,10 +124,12 @@ export const CartPage = () => {
 
             <div className="row">
               <p>Total</p>
-              <p>$ 150.00</p>
+              <p>$ {total}</p>
             </div>
           </div>
           <button>Continuar con la compra</button>
+          <button onClick={consultarCartGlobal}>cart global</button>
+
         </div>
       </div>
     </>
