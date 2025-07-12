@@ -1,8 +1,6 @@
-// import { useState } from "react";
 import "../styles/components/Contador.css";
 import PropTypes from "prop-types";
 export const Contador = ({value, onChange  }) => {
-  // const [contadorValue, setContadorValue] = useState(1);
 
   const updatecontador = (amount) => {
     if (amount < 1 && value == 1) return;
