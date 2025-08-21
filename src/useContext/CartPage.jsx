@@ -7,12 +7,12 @@ export const CartPage = () => {
   const { cart, setCart } = useContext(CartContext);
   const [dataCart, setDataCart] = useState([]);
   const [total, setTotal] = useState(0);
-
+  console.log("cart del cartcomtext: ", cart);
   useEffect(() => {
     const fetchCartData = async () => {
       try {
         const productPromises = cart.map((item) =>
-          fetch(`https://dummyjson.com/products/${item.id}`)
+          fetch(`http://localhost:8080/items/${item.id}`)
             .then((resp) => resp.json())
             .then((data) => ({ ...data, cantidad: item.count }))
         );

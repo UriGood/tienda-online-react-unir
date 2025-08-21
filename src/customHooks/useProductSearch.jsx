@@ -14,9 +14,18 @@ export default function useProductSearch(query) {
     const controller = new AbortController();
     const signal = controller.signal;
     const delayDebounce = setTimeout(() => {
-      fetch(`https://dummyjson.com/products/search?q=${query}`, { signal })
+      // fetch(`https://dummyjson.com/products/search?q=${query}`, { signal })
+      fetch(`http://localhost:8080/items/search?q=${query}`, { signal })
         .then((resp) => resp.json())
-        .then((data) => setResults(data.products || []))
+        .then((data) => {
+          if ("products" in data) {
+            setResults(data.products || [])
+          } else{
+            setResults(data || []) 
+          }
+          //setResults(data.products || [])
+        }
+        )
         .catch((error) => console.log(error))
         .finally(() => setLoading(false));
     }, 500);
