@@ -60,6 +60,38 @@ export const CartPage = () => {
     }
   };
 
+  const completePurchase = async (cart) => {
+    try {
+      const requests = cart.map((product) => {
+        return fetch(`http://localhost:8080/compras`, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            productoId: product.id,
+            cantidad: product.count,
+          }),
+        }).then((resp) => {
+          if (!resp.ok) {
+            throw new Error(
+              "Error al conectar con el servidor, intentelo mas tarde" +
+                resp.status
+            );
+          }
+          return resp.json();
+        });
+      });
+      const results = await Promise.all(requests);
+      setCart([])
+      console.log("Resultados:", results);
+      alert("Compras realizadas con éxito ✅");
+    } catch (error) {
+      console.error("Error en alguna compra:", error);
+      alert("Hubo un problema con las compras ❌");
+    }
+  };
+
   useEffect(() => {
     let saveTotals = 0;
     dataCart.map((product) => {
@@ -78,7 +110,10 @@ export const CartPage = () => {
           </div>
           <div className="details-of-the-products">
             {dataCart.map((product) => (
-              <div className="cart-container__details-of-the-products--row" key={product.id}>
+              <div
+                className="cart-container__details-of-the-products--row"
+                key={product.id}
+              >
                 <div className="cart-container__details-of-the-products--col">
                   <img src={product.thumbnail} alt={product.title} />
                 </div>
@@ -142,7 +177,12 @@ export const CartPage = () => {
               <p>$ {total}</p>
             </div>
           </div>
-          <button>Continuar con la compra</button>
+          <button
+            disabled={cart.length > 0 ? false : true}
+            onClick={() => completePurchase(cart)}
+          >
+            Continuar con la compra
+          </button>
         </div>
       </div>
     </>
