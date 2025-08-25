@@ -16,7 +16,7 @@ export function useProducts(apiUrl = 'https://dummyjson.com/products') {
         if ("products" in data) {
           setProducts(data.products)
         }else{
-          setProducts(data.content)
+          setProducts(data)
         }
         
       } catch (err) {

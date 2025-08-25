@@ -109,10 +109,10 @@ export const CartPage = () => {
             <hr />
           </div>
           <div className="details-of-the-products">
-            {dataCart.map((product) => (
+            {dataCart.map((product,i) => (
               <div
                 className="cart-container__details-of-the-products--row"
-                key={product.id}
+                key={product.id + i}
               >
                 <div className="cart-container__details-of-the-products--col">
                   <img src={product.thumbnail} alt={product.title} />

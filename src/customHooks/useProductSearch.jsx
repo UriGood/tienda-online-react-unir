@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-export default function useProductSearch(query) {
+export default function useProductSearch(query, mode = "search") {
   const [results, setResults] = useState([]);
   const [loading, setLoading] = useState(false);
 
@@ -13,19 +13,15 @@ export default function useProductSearch(query) {
 
     const controller = new AbortController();
     const signal = controller.signal;
+    const endpoint = mode === "autocomplete"
+      ? `http://localhost:8080/items/autocomplete?q=${query}`
+      : `http://localhost:8080/items/search-full-text?q=${query}`;
+
     const delayDebounce = setTimeout(() => {
       // fetch(`https://dummyjson.com/products/search?q=${query}`, { signal })
-      fetch(`http://localhost:8080/items/search?q=${query}`, { signal })
+      fetch(endpoint, { signal })
         .then((resp) => resp.json())
-        .then((data) => {
-          if ("products" in data) {
-            setResults(data.products || [])
-          } else{
-            setResults(data || []) 
-          }
-          //setResults(data.products || [])
-        }
-        )
+        .then((data) => { setResults(data || []) })
         .catch((error) => console.log(error))
         .finally(() => setLoading(false));
     }, 0);
@@ -33,7 +29,7 @@ export default function useProductSearch(query) {
       clearTimeout(delayDebounce);  
       controller.abort();  
     };
-  }, [query]);
+  }, [query, mode]);
 
   return { results, loading };
 }

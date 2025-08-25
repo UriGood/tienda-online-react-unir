@@ -1,0 +1,28 @@
+.facets {
+  border: 1px solid #ddd;
+  padding: 15px;
+  background: #fafafa;
+  width: 250px;
+}
+
+.facets h3 {
+  margin-top: 0;
+  font-size: 1.2em;
+}
+
+.facets ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.facets li {
+  margin: 8px 0;
+}
+
+.facets label {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}

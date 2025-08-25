@@ -41,6 +41,7 @@ export function ProductItem({ product }) {
         </div>
         <div className="productItem__info-container-item">
           <p>{product.title}</p>
+          <p>{product.description}</p>
           <p className="productItem__price">${product.price}</p>
           <p>Disponibles: <span className="productItem__count">{ product.stock }</span> </p>
           <div className="productItem__contador_container">
@@ -57,6 +58,7 @@ ProductItem.propTypes = {
   product: PropTypes.shape({
     id: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
+    description: PropTypes.string.isRequired,
     price: PropTypes.number.isRequired,
     thumbnail: PropTypes.string,
     stock: PropTypes.number,

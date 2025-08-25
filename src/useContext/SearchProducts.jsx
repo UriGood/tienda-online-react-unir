@@ -5,7 +5,7 @@ import '../styles/pages/SearchProducts.css'
 import { SearchProductItem } from "../components/SearchProductItem";
 export default function SearchProducts() {
   const [query, setQuery] = useState("");
-  const { results, loading } = useProductSearch(query);
+  const { results, loading } = useProductSearch(query, "search");
   const [ mensaje, setMensaje ] = useState("Búsquedas sugeridas: watch | smart | iphone | shoes |  ");
  
   useEffect(() => {
@@ -17,10 +17,10 @@ export default function SearchProducts() {
     <>
       <SearchBar onSearch={setQuery} />
       <div className="searchProducts">
-        {loading && <div> Buscando los productos </div>}
-        { (!results.length && !loading) && <div> {mensaje} </div> }
-        {results.map((prod) => {
-          return <SearchProductItem key={prod.id} product={prod}/>;
+        {/* {loading && <div> Buscando los productos </div>} */}
+        { !results.length && !loading && <div> {mensaje} </div> }
+        {results.map((prod,i) => {
+          return <SearchProductItem key={prod.id+i} product={prod}/>;
         })}
       </div>
     </>

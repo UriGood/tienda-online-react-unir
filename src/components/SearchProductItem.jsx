@@ -11,6 +11,8 @@ export const SearchProductItem = ({ product }) => {
   };
 
   const addCart = (id) => {
+    console.log("id: ", id);
+    
     const existProduct = cart.find(prod => prod.id == id);
     if(existProduct){
       setCart(cart.map(prod => (
