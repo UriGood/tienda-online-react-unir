@@ -28,7 +28,7 @@ export default function useProductSearch(query) {
         )
         .catch((error) => console.log(error))
         .finally(() => setLoading(false));
-    }, 500);
+    }, 0);
     return () => {
       clearTimeout(delayDebounce);  
       controller.abort();  

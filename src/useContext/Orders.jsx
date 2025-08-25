@@ -79,7 +79,7 @@ export const Orders = () => {
         const updated = await resp.json();
         console.log("updated: ", updated);
 
-        alert("Compra marcada como devuelta ✅");
+        alert("Compra marcada como devuelta");
         pedirCompras();
       } catch (err) {
         console.log(err);

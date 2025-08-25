@@ -42,7 +42,7 @@ export function ProductItem({ product }) {
         <div className="productItem__info-container-item">
           <p>{product.title}</p>
           <p className="productItem__price">${product.price}</p>
-          <p>Disponibles: <span className="productItem__count">{ product.rating }</span> </p>
+          <p>Disponibles: <span className="productItem__count">{ product.stock }</span> </p>
           <div className="productItem__contador_container">
             <Contador value={contadorValue} onChange={assembleObject}/> &nbsp;
             <button className="productItem__btn-add" onClick={saveProduct}>Agregar al carrito</button>
@@ -55,10 +55,10 @@ export function ProductItem({ product }) {
 
 ProductItem.propTypes = {
   product: PropTypes.shape({
-    id: PropTypes.number.isRequired,
+    id: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
     price: PropTypes.number.isRequired,
     thumbnail: PropTypes.string,
-    rating: PropTypes.number,
+    stock: PropTypes.number,
   }).isRequired,
 };

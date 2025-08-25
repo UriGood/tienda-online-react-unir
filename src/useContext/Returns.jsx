@@ -61,7 +61,7 @@ export const Returns = () => {
         </div>
       ) : (
         purchases.map((product,index) => (
-          <div className="returnsContainer__card" key={product.id}>
+          <div className="returnsContainer__card" key={product.id + index}>
             <div className="returnsContainer__row--date">
               <div className="returnsContainer__col--date">
                 {day[index]}

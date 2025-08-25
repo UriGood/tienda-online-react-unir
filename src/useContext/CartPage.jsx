@@ -85,7 +85,7 @@ export const CartPage = () => {
       const results = await Promise.all(requests);
       setCart([])
       console.log("Resultados:", results);
-      alert("Compras realizadas con éxito ✅");
+      alert("Compras realizadas con éxito");
     } catch (error) {
       console.error("Error en alguna compra:", error);
       alert("Hubo un problema con las compras ❌");

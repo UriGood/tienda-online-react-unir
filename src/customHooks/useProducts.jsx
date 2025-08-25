@@ -11,12 +11,13 @@ export function useProducts(apiUrl = 'https://dummyjson.com/products') {
         setLoading(true)
         const response = await fetch(apiUrl)
         if (!response.ok) throw new Error('Error al cargar productos')
-        const data = await response.json()
-      if ("products" in data) {
-        setProducts(data.products)
-      }else{
-        setProducts(data)
-      }
+          const data = await response.json();
+        
+        if ("products" in data) {
+          setProducts(data.products)
+        }else{
+          setProducts(data.content)
+        }
         
       } catch (err) {
         setError(err.message || 'Error desconocido')
