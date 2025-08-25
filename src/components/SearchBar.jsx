@@ -41,7 +41,7 @@ export function SearchBar({ onSearch }) {
     <form className="searchbar" onSubmit={handleSubmit}>
       <input
         className="searchbar__input"
-        placeholder="Búsca productos..."
+        placeholder="Sugeridas: Samsung | iPhone 15 Pro | Samsung Smart TV 55 | Apple "
         type="text"
         value={input}
         onChange={(e)=> setInput(e.target.value)}

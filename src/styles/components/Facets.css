@@ -1,8 +1,9 @@
 .facets {
   border: 1px solid #ddd;
   padding: 15px;
-  background: #fafafa;
-  width: 250px;
+  background: white;
+  width: 234px;
+  position: absolute;
 }
 
 .facets h3 {
